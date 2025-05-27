@@ -3,13 +3,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-class Teacher(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    subject_name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.user.get_full_name()
-
 
 class Subject(models.Model):  # Renamed to singular
     subject_name = models.CharField(max_length=100)
@@ -111,6 +104,14 @@ class MeetingLog(models.Model):
 
     def __str__(self):
         return f"Meeting - {self.student} - {self.date}"
+
+class Teacher(models.Model):
+    teacher = models.CharField(max_length=20)
+    subject = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.teacher
+
 
 
 
