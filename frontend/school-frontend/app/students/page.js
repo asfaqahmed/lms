@@ -66,7 +66,6 @@ export default function StudentsList() {
 
   return (
     <div>
-      <h1 className="text-xl font-bold mb-4">Students</h1>
 
       {/* Create / Edit form */}
       <form
@@ -85,6 +84,7 @@ export default function StudentsList() {
           required
           className="border p-2 rounded w-full"
         />
+
         <input
           name="last_name"
           placeholder="Last Name"
@@ -93,6 +93,7 @@ export default function StudentsList() {
           required
           className="border p-2 rounded w-full"
         />
+
         <input
           type="date"
           name="date_of_birth"
@@ -102,6 +103,80 @@ export default function StudentsList() {
           required
           className="border p-2 rounded w-full"
         />
+
+        <input
+          name="address"
+          placeholder="Address"
+          value={formData.address || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="assigned_teacher"
+          placeholder="Assigned Teacher"
+          value={formData.assigned_teacher || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          type="date"
+          name="enrollment_date"
+          placeholder="Enrollment Date"
+          value={formData.enrollment_date || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="grade"
+          placeholder="Grade"
+          value={formData.grade || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="guardian_name"
+          placeholder="Guardian Name"
+          value={formData.guardian_name || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="guardian_phone_number"
+          placeholder="Guardian Phone Number"
+          value={formData.guardian_phone_number || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="parent_name"
+          placeholder="Parent Name"
+          value={formData.parent_name || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="parent_phone_number"
+          placeholder="Parent Phone Number"
+          value={formData.parent_phone_number || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="phone_number"
+          placeholder="Phone Number"
+          value={formData.phone_number || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
         <input
           name="reg_number"
           placeholder="Registration Number"
@@ -110,10 +185,19 @@ export default function StudentsList() {
           required
           className="border p-2 rounded w-full"
         />
+
         <input
-          name="grade"
-          placeholder="Grade"
-          value={formData.grade || ""}
+          name="section"
+          placeholder="Section"
+          value={formData.section || ""}
+          onChange={handleChange}
+          className="border p-2 rounded w-full"
+        />
+
+        <input
+          name="subjects"
+          placeholder="Subjects (comma separated)"
+          value={formData.subjects || ""}
           onChange={handleChange}
           className="border p-2 rounded w-full"
         />
@@ -124,6 +208,7 @@ export default function StudentsList() {
         >
           {editingStudent ? "Update Student" : "Add Student"}
         </button>
+
         {editingStudent && (
           <button
             type="button"
@@ -146,8 +231,49 @@ export default function StudentsList() {
             className="border p-4 rounded space-y-2 bg-white shadow-sm"
           >
             <div>
-              <strong>Full Name:</strong> {student.first_name}{" "}
-              {student.last_name}
+              <div>
+                <strong>Full Name:</strong> {student.first_name}{" "}
+                {student.last_name}
+              </div>
+              <div>
+                <strong>Date of Birth:</strong> {student.date_of_birth}
+              </div>
+              <div>
+                <strong>Address:</strong> {student.address}
+              </div>
+              <div>
+                <strong>Assigned Teacher:</strong> {student.assigned_teacher}
+              </div>
+              <div>
+                <strong>Enrollment Date:</strong> {student.enrollment_date}
+              </div>
+              <div>
+                <strong>Grade:</strong> {student.grade}
+              </div>
+              <div>
+                <strong>Guardian Name:</strong> {student.guardian_name}
+              </div>
+              <div>
+                <strong>Guardian Phone:</strong> {student.guardian_phone_number}
+              </div>
+              <div>
+                <strong>Parent Name:</strong> {student.parent_name}
+              </div>
+              <div>
+                <strong>Parent Phone:</strong> {student.parent_phone_number}
+              </div>
+              <div>
+                <strong>Phone Number:</strong> {student.phone_number}
+              </div>
+              <div>
+                <strong>Registration Number:</strong> {student.reg_number}
+              </div>
+              <div>
+                <strong>Section:</strong> {student.section}
+              </div>
+              <div>
+                <strong>Subjects:</strong> {student.subjects}
+              </div>
             </div>
 
             <div className="mt-2 space-x-2">
@@ -167,7 +293,6 @@ export default function StudentsList() {
           </li>
         ))}
       </ul>
-      
     </div>
   );
 }

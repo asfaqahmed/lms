@@ -21,7 +21,7 @@ class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Teacher
         fields = '__all__'
-
+        
 class AttendanceRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = AttendanceRecord
